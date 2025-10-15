@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun Admin - SMK TUTWURI HANDAYANI</title>
+    <link rel="icon" type="image/x-icon" href="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            transition: all 0.3s;
+        }
+        .sidebar-collapsed {
+            width: 80px;
+        }
+        .sidebar-collapsed .sidebar-item-text {
+            display: none;
+        }
+        .content {
+            transition: all 0.3s;
+        }
+        .content-expanded {
+            margin-left: 80px;
+        }
+        .active-item {
+            background-color: #1e40af;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-blue-900 text-white h-screen fixed top-0 left-0 overflow-y-auto z-10 w-64">
+            <div class="p-4 flex items-center space-x-2 border-b border-blue-800 h-16">
+                <i data-feather="book-open" class="text-yellow-300"></i>
+                <span class="font-bold text-lg">SMK Dashboard</span>
+            </div>
+            <div class="p-2 mt-4">
+                <div class="mb-8">
+                    <div class="flex items-center p-3 rounded-lg bg-blue-800">
+                        <img src="http://static.photos/people/40x40/1" alt="Admin" class="w-8 h-8 rounded-full mr-3">
+                        <div>
+                            <div class="font-medium">Admin Sekolah</div>
+                            <div class="text-xs text-blue-200">Super Admin</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-1">
+                    <a href="dashboard.html" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
+                        <i data-feather="home" class="mr-3"></i>
+                        <span class="sidebar-item-text">Dashboard</span>
+                    </a>
+                    <a href="admin_accounts.html" class="flex items-center p-3 rounded-lg hover:bg-blue-800 active-item">
+                        <i data-feather="shield" class="mr-3"></i>
+                        <span class="sidebar-item-text">Akun Admin</span>
+                    </a>
+                    <a href="teacher_accounts.html" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
+                        <i data-feather="user" class="mr-3"></i>
+                        <span class="sidebar-item-text">Akun Guru</span>
+                    </a>
+                    <a href="student_accounts.html" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
+                        <i data-feather="users" class="mr-3"></i>
+                        <span class="sidebar-item-text">Akun Siswa</span>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-blue-800">
+                <a href="login.html" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
+                    <i data-feather="log-out" class="mr-3"></i>
+                    <span class="sidebar-item-text">Keluar</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content flex-1 ml-64 min-h-screen">
+            <!-- Top Navigation -->
+            <nav class="bg-white shadow-sm h-16 flex items-center justify-between px-6 fixed top-0 right-0 left-64 z-10">
+                <div class="flex items-center space-x-4">
+                    <button id="sidebar-toggle" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="menu"></i>
+                    </button>
+                    <h2 class="text-xl font-semibold">Manajemen Akun Admin</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-gray-700 relative">
+                        <i data-feather="bell"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <img src="http://static.photos/people/40x40/1" alt="Admin" class="w-8 h-8 rounded-full">
+                        <span class="font-medium">Admin</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <main class="p-6 mt-16">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Daftar Akun Admin</h1>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i data-feather="plus" class="mr-2 w-4 h-4"></i> Tambah Admin
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Terakhir Login</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img class="w-8 h-8 rounded-full mr-3" src="http://static.photos/people/40x40/1" alt="Admin">
+                                            <div>
+                                                <div class="font-medium">Admin Utama</div>
+                                                <div class="text-gray-500 text-xs">Super Admin</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">admin@smktwh.sch.id</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Super Admin</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10 menit yang lalu</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i data-feather="edit" class="w-4 h-4"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i data-feather="trash-2" class="w-4 h-4"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img class="w-8 h-8 rounded-full mr-3" src="http://static.photos/people/40x40/2" alt="Admin">
+                                            <div>
+                                                <div class="font-medium">Budi Santoso</div>
+                                                <div class="text-gray-500 text-xs">Admin Akademik</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">budi.santoso@smktwh.sch.id</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Admin Akademik</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 jam yang lalu</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i data-feather="edit" class="w-4 h-4"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i data-feather="trash-2" class="w-4 h-4"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img class="w-8 h-8 rounded-full mr-3" src="http://static.photos/people/40x40/3" alt="Admin">
+                                            <div>
+                                                <div class="font-medium">Ani Wijaya</div>
+                                                <div class="text-gray-500 text-xs">Admin Keuangan</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ani.wijaya@smktwh.sch.id</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">Admin Keuangan</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Kemarin</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i data-feather="edit" class="w-4 h-4"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i data-feather="trash-2" class="w-4 h-4"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Admin Roles Information -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Informasi Role Admin</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border-l-4 border-blue-500 pl-4 py-2">
+                            <h4 class="font-medium">Super Admin</h4>
+                            <p class="text-sm text-gray-600">Akses penuh ke semua fitur sistem. Hanya kepala sekolah dan IT admin yang memiliki role ini.</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4 py-2">
+                            <h4 class="font-medium">Admin Akademik</h4>
+                            <p class="text-sm text-gray-600">Mengelola data siswa, guru, jadwal, nilai, dan kegiatan akademik lainnya.</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4 py-2">
+                            <h4 class="font-medium">Admin Keuangan</h4>
+                            <p class="text-sm text-gray-600">Mengelola pembayaran SPP, biaya kegiatan, dan laporan keuangan sekolah.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('sidebar-collapsed');
+            document.querySelector('.content').classList.toggle('content-expanded');
+        });
+
+        // Auto logout after 30 minutes of inactivity
+        let inactivityTimer;
+        const logoutTime = 30 * 60 * 1000; // 30 minutes
+
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(logout, logoutTime);
+        }
+
+        function logout() {
+            localStorage.removeItem('authToken');
+            window.location.href = 'login.html';
+        }
+
+        // Set up event listeners
+        ['mousemove', 'keypress', 'click', 'scroll'].forEach(event => {
+            window.addEventListener(event, resetInactivityTimer);
+        });
+
+        // Initialize the timer
+        resetInactivityTimer();
+    </script>
+</body>
+</html>
