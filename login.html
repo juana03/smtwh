@@ -58,8 +58,7 @@
                     <i data-feather="log-in" class="mr-2 w-4 h-4"></i> Masuk
                 </button>
             </form>
-            <div class="mt-6 text-center">
-                <p class="text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 font-medium hover:text-blue-800">Daftar Sekarang</a></p>
+            
 </div>
 </div>
         <div class="bg-gray-50 px-6 py-4 text-center">
@@ -67,52 +66,6 @@
         </div>
     </div>
     <script>
-        feather.replace();
-        // Password strength validation
-        document.getElementById('password').addEventListener('input', function(e) {
-            const password = e.target.value;
-            const strengthIndicator = document.createElement('div');
-            strengthIndicator.className = 'text-xs mt-1';
-            
-            // Remove existing indicator if any
-            const existingIndicator = e.target.parentNode.querySelector('.strength-indicator');
-            if(existingIndicator) {
-                e.target.parentNode.removeChild(existingIndicator);
-            }
-
-            if(password.length > 0) {
-                let strength = 0;
-                if(password.length >= 8) strength++;
-                if(/\d/.test(password)) strength++;
-                if(/[A-Z]/.test(password)) strength++;
-                if(/[^A-Za-z0-9]/.test(password)) strength++;
-
-                let text, color;
-                switch(strength) {
-                    case 0:
-                    case 1:
-                        text = 'Lemah';
-                        color = 'text-red-500';
-                        break;
-                    case 2:
-                        text = 'Sedang';
-                        color = 'text-yellow-500';
-                        break;
-                    case 3:
-                        text = 'Kuat';
-                        color = 'text-blue-500';
-                        break;
-                    case 4:
-                        text = 'Sangat Kuat';
-                        color = 'text-green-500';
-                        break;
-                }
-                
-                strengthIndicator.innerHTML = `Kekuatan password: <span class="${color} font-medium">${text}</span>`;
-                strengthIndicator.classList.add('strength-indicator');
-                e.target.parentNode.appendChild(strengthIndicator);
-            }
-        });
 // Form submission with basic validation
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
