@@ -3,104 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - SMK TUTWURI HANDAYANI</title>
+    <title>SMK TUTWURI HANDAYANI - Sekolah Unggulan Teknologi Industri</title>
     <link rel="icon" type="image/x-icon" href="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png">
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
-        .login-card {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://static.photos/education/1200x630/1');
+            background-size: cover;
+            background-position: center;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .stat-item {
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl login-card w-full max-w-md overflow-hidden">
-        <div class="bg-blue-800 text-white p-6 text-center">
-            <div class="flex justify-center mb-4">
-                <i data-feather="book-open" class="w-10 h-10 text-yellow-300"></i>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png" alt="Logo SMK" class="h-12">
+                <span class="text-xl font-bold text-blue-800">SMK TUTWURI HANDAYANI</span>
             </div>
-            <h1 class="text-2xl font-bold">SMK TUTWURI HANDAYANI</h1>
-            <p class="text-blue-200">Silakan masuk ke akun Anda</p>
-        </div>
-        <div class="p-6">
-            <form>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <i data-feather="mail" class="text-gray-400"></i>
-                        </div>
-                        <input type="email" id="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="email@example.com">
-                    </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">Beranda</a>
+                <a href="#profil" class="text-gray-600 hover:text-blue-600">Profil</a>
+                <a href="#jurusan" class="text-gray-600 hover:text-blue-600">Jurusan</a>
+                <a href="#berita" class="text-gray-600 hover:text-blue-600">Berita</a>
+                <a href="#galeri" class="text-gray-600 hover:text-blue-600">Galeri</a>
+                <a href="#kontak" class="text-gray-600 hover:text-blue-600">Kontak</a>
+                <div class="relative group">
+                    <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                        Masuk Dashboard 
+                    </a>
+                  
                 </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <i data-feather="lock" class="text-gray-400"></i>
-                        </div>
-                        <input type="password" id="password" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••">
-                    </div>
-                </div>
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center">
-                        <input type="checkbox" id="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                        <label for="remember" class="ml-2 block text-sm text-gray-700">Ingat saya</label>
-                    </div>
-                    <a href="forgot_password.html" class="text-sm text-blue-600 hover:text-blue-800">Lupa password?</a>
 </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center">
-                    <i data-feather="log-in" class="mr-2 w-4 h-4"></i> Masuk
-                </button>
-            </form>
-            <div class="mt-6 text-center">
-                <p class="text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 font-medium hover:text-blue-800">Daftar Sekarang</a></p>
-</div>
-</div>
-        <div class="bg-gray-50 px-6 py-4 text-center">
-            <p class="text-sm text-gray-500">© 2025 SMK TUTWURI HANDAYANI. All rights reserved.</p>
+            <button class="md:hidden text-gray-600">
+                <i data-feather="menu"></i>
+            </button>
         </div>
-    </div>
-    <script>
-        feather.replace();
-        // Password strength validation
-        document.getElementById('password').addEventListener('input', function(e) {
-            const password = e.target.value;
-            const strengthIndicator = document.createElement('div');
-            strengthIndicator.className = 'text-xs mt-1';
-            
-        });
-// Form submission with basic validation
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+    </nav>
 
-            if(!email || !password) {
-                alert('Email dan password harus diisi');
-                return;
-            }
-            // Basic validation
-            if(email && password) {
-                // Simple credential check (replace with real authentication)
-                if(email === 'admin@smktwh.sch.id' && password === 'admin123') {
-                    // Store auth token in localStorage
-                    localStorage.setItem('authToken', 'dummy-token-123456');
-                    // Redirect to dashboard
-                    window.location.href = 'dashboard.html';
-                } else {
-                    alert('Email atau password salah');
-                }
-            } else {
-                alert('Email dan password harus diisi');
-            }
-});
-</script>
+    <!-- Hero Section -->
+    <section class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">SMK TUTWURI HANDAYANI</h1>
+            <h2 class="text-xl md:text-2xl mb-8">Membangun Generasi Siap Kerja dan Kompeten</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">Menyiapkan peserta didik unggul di bidang teknik dan teknologi industri.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://forms.gle/Ddm5mNHQ7E5cJf6c9" class="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition font-medium">Daftar SPMB Sekarang</a>
+                <a href="#jurusan" class="bg-white text-blue-800 px-6 py-3 rounded-lg hover:bg-gray-100 transition font-medium">Lihat Jurusan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="profil" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Tentang Kami</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">SMK TUTWURI HANDAYANI</h3>
+                    <p class="text-gray-600 mb-4">Didirikan pada tahun 1995, SMK TUTWURI HANDAYANI telah menjadi salah satu sekolah kejuruan terkemuka di bidang teknologi industri. Kami berkomitmen untuk menghasilkan lulusan yang siap kerja dan berdaya saing tinggi.</p>
+                    <h4 class="text-lg font-semibold mb-2">Visi:</h4>
+                    <p class="text-gray-600 mb-4">Menjadi sekolah kejuruan unggulan yang menghasilkan lulusan kompeten di bidang teknologi industri tingkat nasional.</p>
+                    <h4 class="text-lg font-semibold mb-2">Misi:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Menyelenggarakan pendidikan berkualitas berbasis kompetensi</li>
+                        <li>Mengembangkan kurikulum sesuai kebutuhan industri</li>
+                        <li>Membentuk karakter siswa yang berakhlak mulia</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="http://static.photos/education/640x360/2" alt="Sekolah" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                <div class="stat-item bg-blue-50 p-6 rounded-lg text-center">
+                    <i data-feather="users" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                    <h3 class="text-3xl font-bold text-blue-800 mb-2">850+</h3>
+                    <p class="text-gray-600">Siswa Aktif</p>
+                </div>
+                <div class="stat-item bg-yellow-50 p-6 rounded-lg text-center">
+                    <i data-feather="user" class="w-12 h-12 text-yellow-600 mx-auto mb-4"></i>
+                    <h3 class="text-3xl font-bold text-yellow-800 mb-2">45</h3>
+                    <p class="text-gray-600">Guru Kompeten</p>
+                </div>
+                <div class="stat-item bg-green-50 p-6 rounded-lg text-center">
+                    <i data-feather="briefcase" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+                    <h3 class="text-3xl font-bold text-green-800 mb-2">12</h3>
+                    <p class="text-gray-600">Mitra Industri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="jurusan" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Program Keahlian</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami menyediakan program keahlian yang relevan dengan kebutuhan industri saat ini.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Program 1 -->
+                <div class="program-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="tool" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Teknik Pemesinan</h3>
+                    <p class="text-gray-600 mb-4">Mempelajari proses pembuatan komponen mesin dengan mesin CNC dan konvensional.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                        Detail <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="car" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Teknik Kendaraan Ringan</h3>
+                    <p class="text-gray-600 mb-4">Menguasai perbaikan dan perawatan kendaraan bermotor roda empat.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                        Detail <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="code" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rekayasa Perangkat Lunak</h3>
+                    <p class="text-gray-600 mb-4">Mengembangkan aplikasi dan sistem informasi berbasis web dan mobile.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                        Detail <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+</div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="berita" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Berita & Kegiatan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Informasi terbaru seputar kegiatan dan prestasi sekolah.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- News 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="http://static.photos/education/640x360/3" alt="Berita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-blue-600">15 Nov 2023</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">SMK TWH Juara 1 Lomba Robotik Tingkat Provinsi</h3>
+                        <p class="text-gray-600 mb-4">Tim robotik kami berhasil meraih juara pertama dalam kompetisi tahunan yang diadakan oleh Dinas Pendidikan...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                            Baca Selengkapnya <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="http://static.photos/education/640x360/4" alt="Berita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-blue-600">10 Nov 2023</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">Kerjasama Baru dengan PT Industri Maju</h3>
+                        <p class="text-gray-600 mb-4">SMK TWH menandatangani MOU dengan PT Industri Maju untuk program magang dan rekrutmen lulusan...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                            Baca Selengkapnya <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="http://static.photos/education/640x360/5" alt="Berita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-blue-600">5 Nov 2023</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">Kegiatan Outbound Kelas XII</h3>
+                        <p class="text-gray-600 mb-4">Sebagai bagian dari program penguatan karakter, siswa kelas XII mengikuti kegiatan outbound di...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                            Baca Selengkapnya <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                    Lihat Semua Berita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Galeri Kegiatan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Momen berharga dari berbagai kegiatan di SMK TUTWURI HANDAYANI.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button class="px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-600 text-white">
+                        Semua
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">
+                        Praktik
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">
+                        Lomba
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-gray-700 hover:bg-gray-50">
+                        Kegiatan
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/6" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/7" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/8" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/9" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/10" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/11" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/12" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <a href="#">
+                        <img src="http://static.photos/education/640x360/13" alt="Galeri" class="w-full h-48 object-cover transition duration-300">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Kata Alumni</h2>
+                <p class="max-w-2xl mx-auto">Pendapat mereka yang telah lulus dari SMK TUTWURI HANDAYANI.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="swiper testimonial-slider">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white text-gray-800 p-8 rounded-lg max-w-2xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/80x80/1" alt="Alumni" class="w-16 h-16 rounded-full mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Budi Santoso</h3>
+                                    <p class="text-blue-600">Software Engineer, PT Telkom Indonesia</p>
+                                </div>
+                            </div>
+                            <p class="italic">"Saya lulusan RPL SMK TUTWURI HANDAYANI tahun 2018. Kompetensi yang saya dapatkan di sekolah sangat membantu karir saya di dunia IT. Sekarang saya bekerja sebagai Software Engineer di PT Telkom Indonesia."</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white text-gray-800 p-8 rounded-lg max-w-2xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/80x80/2" alt="Alumni" class="w-16 h-16 rounded-full mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Ani Wijaya</h3>
+                                    <p class="text-blue-600">Teknisi Mesin, PT Astra Daihatsu Motor</p>
+                                </div>
+                            </div>
+                            <p class="italic">"Pendidikan di SMK TUTWURI HANDAYANI sangat aplikatif. Setelah lulus Teknik Pemesinan, saya langsung diterima bekerja di PT Astra Daihatsu Motor sebagai teknisi mesin produksi."</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white text-gray-800 p-8 rounded-lg max-w-2xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/80x80/3" alt="Alumni" class="w-16 h-16 rounded-full mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Dewi Kartika</h3>
+                                    <p class="text-blue-600">Network Engineer, PT Indosat</p>
+                                </div>
+                            </div>
+                            <p class="italic">"SMK TUTWURI HANDAYANI memberikan saya bekal pengetahuan jaringan komputer yang sangat berguna. Sekarang saya bekerja sebagai Network Engineer di PT Indosat dengan gaji yang memuaskan."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Hubungi Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Silakan hubungi kami untuk informasi lebih lanjut.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kirim Pesan</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Nama Anda">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Pesan</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Tulis pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Info Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium">Alamat</h4>
+                                <p class="text-gray-600">Jl. Pendidikan No. 123, Kec. Kota Baru, Kab. Kota Muda, Jawa Barat 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="phone" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium">Telepon</h4>
+                                <p class="text-gray-600">(021) 12345678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600">info@smktwh.sch.id</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Lokasi Sekolah</h4>
+                        <div class="bg-gray-100 rounded-lg overflow-hidden h-64">
+                            <!-- Google Maps iframe -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0000000000005!2d106.00000000000001!3d-6.000000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJTIDEwNsKwMDAnMDAuMCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png" alt="Logo SMK" class="h-10">
+                        <span class="text-lg font-bold">SMK TUTWURI HANDAYANI</span>
+                    </div>
+                    <p class="text-blue-200 mb-4">Sekolah Menengah Kejuruan bidang teknologi industri terbaik di wilayah Jawa Barat.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Beranda</a></li>
+                        <li><a href="#profil" class="text-blue-200 hover:text-white">Profil Sekolah</a></li>
+                        <li><a href="#jurusan" class="text-blue-200 hover:text-white">Program Keahlian</a></li>
+                        <li><a href="#berita" class="text-blue-200 hover:text-white">Berita & Kegiatan</a></li>
+                        <li><a href="#galeri" class="text-blue-200 hover:text-white">Galeri</a></li>
+                        <li><a href="#kontak" class="text-blue-200 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jam Operasional</h3>
+                    <div class="space-y-2 text-blue-200">
+                        <p>Senin - Jumat: 07.00 - 16.00 WIB</p>
+                        <p>Sabtu: 08.00 - 12.00 WIB</p>
+                        <p>Minggu & Hari Libur: Tutup</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-6 text-center text-blue-200">
+                <p>© 2025 SMK TUTWURI HANDAYANI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize feather icons
+        feather.replace();
+
+        // Initialize testimonial slider
+        const testimonialSlider = new Swiper('.testimonial-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Mobile menu toggle (placeholder, implement as needed)
+        document.querySelector('nav button').addEventListener('click', function() {
+            // Implement mobile menu toggle functionality here
+            console.log('Mobile menu clicked');
+        });
+    </script>
 </body>
 </html>
