@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK TUTWURI HANDAYANI - Sekolah Unggulan Teknologi Industri</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo_TWH-removebg-preview.png">
+    <link rel="icon" type="image/x-icon" href="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -48,8 +48,17 @@
                 <a href="#berita" class="text-gray-600 hover:text-blue-600">Berita</a>
                 <a href="#galeri" class="text-gray-600 hover:text-blue-600">Galeri</a>
                 <a href="#kontak" class="text-gray-600 hover:text-blue-600">Kontak</a>
-                <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Masuk Dashboard</a>
-            </div>
+                <div class="relative group">
+                    <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                        Masuk Dashboard <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-1 w-48 z-50">
+                        <a href="login.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">Masuk</a>
+                        <a href="register.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">Daftar</a>
+                        <a href="forgot_password.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">Lupa Password</a>
+                    </div>
+                </div>
+</div>
             <button class="md:hidden text-gray-600">
                 <i data-feather="menu"></i>
             </button>
