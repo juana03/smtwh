@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SMK TUTWURI HANDAYANI</title>
+    <link rel="icon" type="image/x-icon" href="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png">
+<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .login-card {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl login-card w-full max-w-md overflow-hidden">
+        <div class="bg-blue-800 text-white p-6 text-center">
+            <div class="flex justify-center mb-4">
+                <i data-feather="book-open" class="w-10 h-10 text-yellow-300"></i>
+            </div>
+            <h1 class="text-2xl font-bold">SMK TUTWURI HANDAYANI</h1>
+            <p class="text-blue-200">Silakan masuk ke akun Anda</p>
+        </div>
+        <div class="p-6">
+            <form>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="mail" class="text-gray-400"></i>
+                        </div>
+                        <input type="email" id="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="email@example.com">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="lock" class="text-gray-400"></i>
+                        </div>
+                        <input type="password" id="password" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">Ingat saya</label>
+                    </div>
+                    <a href="forgot_password.html" class="text-sm text-blue-600 hover:text-blue-800">Lupa password?</a>
+</div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                    <i data-feather="log-in" class="mr-2 w-4 h-4"></i> Masuk
+                </button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 font-medium hover:text-blue-800">Daftar Sekarang</a></p>
+</div>
+</div>
+        <div class="bg-gray-50 px-6 py-4 text-center">
+            <p class="text-sm text-gray-500">© 2025 SMK TUTWURI HANDAYANI. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+        feather.replace();
+        // Password strength validation
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthIndicator = document.createElement('div');
+            strengthIndicator.className = 'text-xs mt-1';
+            
+            // Remove existing indicator if any
+            const existingIndicator = e.target.parentNode.querySelector('.strength-indicator');
+            if(existingIndicator) {
+                e.target.parentNode.removeChild(existingIndicator);
+            }
+
+            if(password.length > 0) {
+                let strength = 0;
+                if(password.length >= 8) strength++;
+                if(/\d/.test(password)) strength++;
+                if(/[A-Z]/.test(password)) strength++;
+                if(/[^A-Za-z0-9]/.test(password)) strength++;
+
+                let text, color;
+                switch(strength) {
+                    case 0:
+                    case 1:
+                        text = 'Lemah';
+                        color = 'text-red-500';
+                        break;
+                    case 2:
+                        text = 'Sedang';
+                        color = 'text-yellow-500';
+                        break;
+                    case 3:
+                        text = 'Kuat';
+                        color = 'text-blue-500';
+                        break;
+                    case 4:
+                        text = 'Sangat Kuat';
+                        color = 'text-green-500';
+                        break;
+                }
+                
+                strengthIndicator.innerHTML = `Kekuatan password: <span class="${color} font-medium">${text}</span>`;
+                strengthIndicator.classList.add('strength-indicator');
+                e.target.parentNode.appendChild(strengthIndicator);
+            }
+        });
+// Form submission with basic validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if(!email || !password) {
+                alert('Email dan password harus diisi');
+                return;
+            }
+            // Basic validation
+            if(email && password) {
+                // Simple credential check (replace with real authentication)
+                if(email === 'admin@smktwh.sch.id' && password === 'admin123') {
+                    // Store auth token in localStorage
+                    localStorage.setItem('authToken', 'dummy-token-123456');
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Email atau password salah');
+                }
+            } else {
+                alert('Email dan password harus diisi');
+            }
+});
+</script>
+</body>
+</html>
