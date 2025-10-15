@@ -3,427 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin - SMK TUTWURI HANDAYANI</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo_TWH-removebg-preview.png">
+    <title>Login - SMK TUTWURI HANDAYANI</title>
+    <link rel="icon" type="image/x-icon" href="https://huggingface.co/spaces/juanar33/smk-pro-edusphere/resolve/main/images/Logo_TWH-removebg-preview.png">
 <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
-        .sidebar {
-            transition: all 0.3s;
-        }
-        .sidebar-collapsed {
-            width: 80px;
-        }
-        .sidebar-collapsed .sidebar-item-text {
-            display: none;
-        }
-        .content {
-            transition: all 0.3s;
-        }
-        .content-expanded {
-            margin-left: 80px;
-        }
-        .active-item {
-            background-color: #1e40af;
-            color: white;
-        }
-        .active-item:hover {
-            background-color: #1e40af !important;
-            color: white !important;
+        .login-card {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="sidebar bg-blue-900 text-white h-screen fixed top-0 left-0 overflow-y-auto z-10 w-64">
-            <div class="p-4 flex items-center space-x-2 border-b border-blue-800 h-16">
-                <i data-feather="book-open" class="text-yellow-300"></i>
-                <span class="font-bold text-lg">SMK Dashboard</span>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl login-card w-full max-w-md overflow-hidden">
+        <div class="bg-blue-800 text-white p-6 text-center">
+            <div class="flex justify-center mb-4">
+                <i data-feather="book-open" class="w-10 h-10 text-yellow-300"></i>
             </div>
-            <div class="p-2 mt-4">
-                <div class="mb-8">
-                    <div class="flex items-center p-3 rounded-lg bg-blue-800">
-                        <img src="http://static.photos/people/40x40/1" alt="Admin" class="w-8 h-8 rounded-full mr-3">
-                        <div>
-                            <div class="font-medium">Admin Sekolah</div>
-                            <div class="text-xs text-blue-200">Super Admin</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-1">
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800 active-item">
-                        <i data-feather="home" class="mr-3"></i>
-                        <span class="sidebar-item-text">Dashboard</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="users" class="mr-3"></i>
-                        <span class="sidebar-item-text">Data Siswa</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="user" class="mr-3"></i>
-                        <span class="sidebar-item-text">Data Guru</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="book" class="mr-3"></i>
-                        <span class="sidebar-item-text">Jurusan & Kelas</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="file-text" class="mr-3"></i>
-                        <span class="sidebar-item-text">Nilai & Raport</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="calendar" class="mr-3"></i>
-                        <span class="sidebar-item-text">Presensi</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="dollar-sign" class="mr-3"></i>
-                        <span class="sidebar-item-text">Keuangan</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="bell" class="mr-3"></i>
-                        <span class="sidebar-item-text">Pengumuman</span>
-                    </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                        <i data-feather="settings" class="mr-3"></i>
-                        <span class="sidebar-item-text">Pengaturan</span>
-                    </a>
-                </div>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-blue-800">
-                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-800">
-                    <i data-feather="log-out" class="mr-3"></i>
-                    <span class="sidebar-item-text">Keluar</span>
-                </a>
-            </div>
+            <h1 class="text-2xl font-bold">SMK TUTWURI HANDAYANI</h1>
+            <p class="text-blue-200">Silakan masuk ke akun Anda</p>
         </div>
-
-        <!-- Main Content -->
-        <div class="content flex-1 ml-64 min-h-screen">
-            <!-- Top Navigation -->
-            <nav class="bg-white shadow-sm h-16 flex items-center justify-between px-6 fixed top-0 right-0 left-64 z-10">
-                <div class="flex items-center space-x-4">
-                    <button id="sidebar-toggle" class="text-gray-500 hover:text-gray-700">
-                        <i data-feather="menu"></i>
-                    </button>
+        <div class="p-6">
+            <form>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                     <div class="relative">
-                        <input type="text" placeholder="Cari..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-64">
-                        <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400"></i>
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="mail" class="text-gray-400"></i>
+                        </div>
+                        <input type="email" id="email" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="email@example.com">
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button class="text-gray-500 hover:text-gray-700 relative">
-                        <i data-feather="bell"></i>
-                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
-                    </button>
-                    <div class="flex items-center space-x-2">
-                        <img src="http://static.photos/people/40x40/1" alt="Admin" class="w-8 h-8 rounded-full">
-                        <span class="font-medium">Admin</span>
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="lock" class="text-gray-400"></i>
+                        </div>
+                        <input type="password" id="password" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••">
                     </div>
                 </div>
-            </nav>
-
-            <!-- Page Content -->
-            <main class="p-6 mt-16">
-                <h1 class="text-2xl font-bold text-gray-800 mb-6">Dashboard Admin</h1>
-                
-                <!-- Stats Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-500">Total Siswa</p>
-                                <h3 class="text-3xl font-bold mt-2">1,240</h3>
-                            </div>
-                            <div class="bg-blue-100 p-3 rounded-full">
-                                <i data-feather="users" class="text-blue-600 w-6 h-6"></i>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="text-green-500 text-sm font-medium">+12.5% dari tahun lalu</span>
-                        </div>
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">Ingat saya</label>
                     </div>
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-500">Total Guru</p>
-                                <h3 class="text-3xl font-bold mt-2">65</h3>
-                            </div>
-                            <div class="bg-green-100 p-3 rounded-full">
-                                <i data-feather="user" class="text-green-600 w-6 h-6"></i>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="text-green-500 text-sm font-medium">+3 dari tahun lalu</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-500">Total Jurusan</p>
-                                <h3 class="text-3xl font-bold mt-2">3</h3>
-                            </div>
-                            <div class="bg-yellow-100 p-3 rounded-full">
-                                <i data-feather="book" class="text-yellow-600 w-6 h-6"></i>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="text-gray-500 text-sm font-medium">Tetap sama</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-500">Kehadiran Hari Ini</p>
-                                <h3 class="text-3xl font-bold mt-2">92%</h3>
-                            </div>
-                            <div class="bg-purple-100 p-3 rounded-full">
-                                <i data-feather="calendar" class="text-purple-600 w-6 h-6"></i>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="text-green-500 text-sm font-medium">+2% dari kemarin</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charts Row -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-semibold">Statistik Siswa per Jurusan</h3>
-                            <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
-                                <option>Tahun 2023/2024</option>
-                                <option>Tahun 2022/2023</option>
-                                <option>Tahun 2021/2022</option>
-                            </select>
-                        </div>
-                        <canvas id="studentsChart" height="250"></canvas>
-                    </div>
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-semibold">Rekap Presensi Bulan Ini</h3>
-                            <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
-                                <option>November 2023</option>
-                                <option>Oktober 2023</option>
-                                <option>September 2023</option>
-                            </select>
-                        </div>
-                        <canvas id="attendanceChart" height="250"></canvas>
-                    </div>
-                </div>
-
-                <!-- Recent Activity & Quick Actions -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
-                        <h3 class="text-lg font-semibold mb-4">Aktivitas Terkini</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-2 rounded-full mr-4">
-                                    <i data-feather="user-plus" class="text-blue-600 w-4 h-4"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Siswa baru ditambahkan</p>
-                                    <p class="text-sm text-gray-500">Andi Pratama (X RPL 1) ditambahkan oleh Admin</p>
-                                    <p class="text-xs text-gray-400 mt-1">2 jam yang lalu</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-2 rounded-full mr-4">
-                                    <i data-feather="edit" class="text-green-600 w-4 h-4"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Nilai diperbarui</p>
-                                    <p class="text-sm text-gray-500">Bu Siti memperbarui nilai Matematika kelas X TKJ 2</p>
-                                    <p class="text-xs text-gray-400 mt-1">5 jam yang lalu</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-purple-100 p-2 rounded-full mr-4">
-                                    <i data-feather="dollar-sign" class="text-purple-600 w-4 h-4"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Pembayaran SPP</p>
-                                    <p class="text-sm text-gray-500">Budi Santoso (XII TKR 3) membayar SPP November 2023</p>
-                                    <p class="text-xs text-gray-400 mt-1">1 hari yang lalu</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-yellow-100 p-2 rounded-full mr-4">
-                                    <i data-feather="bell" class="text-yellow-600 w-4 h-4"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Pengumuman baru</p>
-                                    <p class="text-sm text-gray-500">Pengumuman lomba robotik tingkat provinsi</p>
-                                    <p class="text-xs text-gray-400 mt-1">2 hari yang lalu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <h3 class="text-lg font-semibold mb-4">Aksi Cepat</h3>
-                        <div class="space-y-3">
-                            <a href="#" class="flex items-center p-3 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100">
-                                <i data-feather="user-plus" class="mr-3 w-5 h-5"></i>
-                                <span>Tambah Siswa Baru</span>
-                            </a>
-                            <a href="#" class="flex items-center p-3 bg-green-50 text-green-600 rounded-lg hover:bg-green-100">
-                                <i data-feather="edit" class="mr-3 w-5 h-5"></i>
-                                <span>Input Nilai Siswa</span>
-                            </a>
-                            <a href="#" class="flex items-center p-3 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100">
-                                <i data-feather="dollar-sign" class="mr-3 w-5 h-5"></i>
-                                <span>Kelola Pembayaran</span>
-                            </a>
-                            <a href="#" class="flex items-center p-3 bg-yellow-50 text-yellow-600 rounded-lg hover:bg-yellow-100">
-                                <i data-feather="bell" class="mr-3 w-5 h-5"></i>
-                                <span>Buat Pengumuman</span>
-                            </a>
-                            <a href="#" class="flex items-center p-3 bg-red-50 text-red-600 rounded-lg hover:bg-red-100">
-                                <i data-feather="file-text" class="mr-3 w-5 h-5"></i>
-                                <span>Generate Laporan</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </main>
+</div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                    <i data-feather="log-in" class="mr-2 w-4 h-4"></i> Masuk
+                </button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 font-medium hover:text-blue-800">Daftar Sekarang</a></p>
+</div>
+</div>
+        <div class="bg-gray-50 px-6 py-4 text-center">
+            <p class="text-sm text-gray-500">© 2025 SMK TUTWURI HANDAYANI. All rights reserved.</p>
         </div>
     </div>
-
     <script>
-        // Initialize feather icons
         feather.replace();
+        // Password strength validation
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthIndicator = document.createElement('div');
+            strengthIndicator.className = 'text-xs mt-1';
+            
+            // Remove existing indicator if any
+            const existingIndicator = e.target.parentNode.querySelector('.strength-indicator');
+            if(existingIndicator) {
+                e.target.parentNode.removeChild(existingIndicator);
+            }
 
-        // Auto logout after 30 minutes of inactivity
-        let inactivityTimer;
-        const logoutTime = 30 * 60 * 1000; // 30 minutes
+            if(password.length > 0) {
+                let strength = 0;
+                if(password.length >= 8) strength++;
+                if(/\d/.test(password)) strength++;
+                if(/[A-Z]/.test(password)) strength++;
+                if(/[^A-Za-z0-9]/.test(password)) strength++;
 
-        function resetInactivityTimer() {
-            clearTimeout(inactivityTimer);
-            inactivityTimer = setTimeout(logout, logoutTime);
-        }
-
-        function logout() {
-            // Clear any sensitive data
-            localStorage.removeItem('authToken');
-            sessionStorage.removeItem('sessionData');
-            window.location.href = 'login.html';
-        }
-
-        // Set up event listeners to reset timer on user activity
-        ['mousemove', 'keypress', 'click', 'scroll'].forEach(event => {
-            window.addEventListener(event, resetInactivityTimer);
-        });
-
-        // Initialize the timer when page loads
-        resetInactivityTimer();
-        // Check for session when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            if(!localStorage.getItem('authToken') || localStorage.getItem('authToken') !== 'dummy-token-123456') {
-                window.location.href = 'login.html';
+                let text, color;
+                switch(strength) {
+                    case 0:
+                    case 1:
+                        text = 'Lemah';
+                        color = 'text-red-500';
+                        break;
+                    case 2:
+                        text = 'Sedang';
+                        color = 'text-yellow-500';
+                        break;
+                    case 3:
+                        text = 'Kuat';
+                        color = 'text-blue-500';
+                        break;
+                    case 4:
+                        text = 'Sangat Kuat';
+                        color = 'text-green-500';
+                        break;
+                }
+                
+                strengthIndicator.innerHTML = `Kekuatan password: <span class="${color} font-medium">${text}</span>`;
+                strengthIndicator.classList.add('strength-indicator');
+                e.target.parentNode.appendChild(strengthIndicator);
             }
         });
-// Clear session when logging out
-        document.querySelector('.sidebar a[href="#"]:last-child').addEventListener('click', function(e) {
+// Form submission with basic validation
+        document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            localStorage.removeItem('authToken');
-            window.location.href = 'login.html';
-        });
-// Secure sensitive data handling
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mask sensitive data in UI
-            const sensitiveElements = document.querySelectorAll('[data-sensitive]');
-            sensitiveElements.forEach(el => {
-                el.textContent = '••••••••';
-                el.addEventListener('click', function() {
-                    // Only show on explicit click with proper auth
-                    if(confirm('Tampilkan data sensitif?')) {
-                        el.textContent = el.dataset.original || 'Data tidak tersedia';
-                    }
-                });
-            });
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-            // Prevent right-click on sensitive data
-            document.addEventListener('contextmenu', function(e) {
-                if(e.target.closest('[data-sensitive]')) {
-                    e.preventDefault();
-                    alert('Tindakan ini tidak diizinkan untuk data sensitif');
-                }
-            });
-        });
-
-        // Toggle sidebar
-        document.getElementById('sidebar-toggle').addEventListener('click', function() {
-document.querySelector('.sidebar').classList.toggle('sidebar-collapsed');
-            document.querySelector('.content').classList.toggle('content-expanded');
-        });
-
-        // Initialize charts
-        const studentsCtx = document.getElementById('studentsChart').getContext('2d');
-        const studentsChart = new Chart(studentsCtx, {
-            type: 'bar',
-            data: {
-                labels: ['TKJ', 'TKR', 'RPL'],
-                datasets: [{
-                    label: 'Jumlah Siswa',
-                    data: [420, 380, 440],
-                    backgroundColor: [
-                        'rgba(59, 130, 246, 0.7)',
-                        'rgba(16, 185, 129, 0.7)',
-                        'rgba(234, 179, 8, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(59, 130, 246, 1)',
-                        'rgba(16, 185, 129, 1)',
-                        'rgba(234, 179, 8, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+            if(!email || !password) {
+                alert('Email dan password harus diisi');
+                return;
             }
-        });
-
-        const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
-        const attendanceChart = new Chart(attendanceCtx, {
-            type: 'line',
-            data: {
-                labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
-                datasets: [{
-                    label: 'Kehadiran (%)',
-                    data: [85, 88, 92, 90],
-                    fill: false,
-                    backgroundColor: 'rgba(124, 58, 237, 0.7)',
-                    borderColor: 'rgba(124, 58, 237, 1)',
-                    tension: 0.1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        min: 80,
-                        max: 100
-                    }
+            // Basic validation
+            if(email && password) {
+                // Simple credential check (replace with real authentication)
+                if(email === 'admin@smktwh.sch.id' && password === 'admin123') {
+                    // Store auth token in localStorage
+                    localStorage.setItem('authToken', 'dummy-token-123456');
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Email atau password salah');
                 }
+            } else {
+                alert('Email dan password harus diisi');
             }
-        });
-    </script>
+});
+</script>
 </body>
 </html>
