@@ -53,12 +53,14 @@
                         <input type="checkbox" id="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
                         <label for="remember" class="ml-2 block text-sm text-gray-700">Ingat saya</label>
                     </div>
+                    <a href="forgot_password.html" class="text-sm text-blue-600 hover:text-blue-800">Lupa password?</a>
 </div>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center">
                     <i data-feather="log-in" class="mr-2 w-4 h-4"></i> Masuk
                 </button>
             </form>
-            
+            <div class="mt-6 text-center">
+                <p class="text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 font-medium hover:text-blue-800">Daftar Sekarang</a></p>
 </div>
 </div>
         <div class="bg-gray-50 px-6 py-4 text-center">
@@ -66,6 +68,14 @@
         </div>
     </div>
     <script>
+        feather.replace();
+        // Password strength validation
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthIndicator = document.createElement('div');
+            strengthIndicator.className = 'text-xs mt-1';
+            
+        });
 // Form submission with basic validation
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
